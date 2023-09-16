@@ -1,9 +1,9 @@
-const QContainer = document.getElementsByClassName("QContainer");
-const qScore = document.getElementsByClassName("Score");
-const Timer = document.getElementsByClassName("Timer");
-const homePage = document.getElementsByClassName("Home");
-const quizQuestions = document.getElementsByClassName("QuizQ");
-const leaderboard = document.getElementsByClassName("ScoreBoard");
+const QContainer = document.querySelector(".QContainer");
+const qScore = document.querySelector(".Score");
+const Timer = document.querySelector(".Timer");
+const homePage = document.querySelector(".Home");
+const quizQuestions = document.querySelector(".QuizQ");
+const leaderboard = document.querySelector(".ScoreBoard");
 
 const QuizQs = [
     {
@@ -31,14 +31,22 @@ const QuizQs = [
     },
 ];
 
+let currentQ = 0;
+let theScore = 0;
+let time = 60;
+
 function runQuiz() {
+
     for(let i = 0; i < QuizQs.length; i++){
         const questionDiv =document.createElement("div");
         const questionPara = document.createElement("p");
-        questionPara.textContent = QuizQs[i].questions;
+        questionPara.textContent = QuizQs[i].question;
         questionDiv.appendChild(questionPara);
+        QContainer.appendChild(questionDiv);
     }
 };
 
 console.log(runQuiz());
+
+runQuiz();
 
