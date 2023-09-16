@@ -1,3 +1,10 @@
+const QContainer = document.getElementsByClassName("QContainer");
+const qScore = document.getElementsByClassName("Score");
+const Timer = document.getElementsByClassName("Timer");
+const homePage = documnet.getElementsByClassName("Home");
+const quizQuestions = document.getElementsByClassName("QuizQ");
+const leaderboard = document.getElementsByClassName("ScoreBoard");
+
 const QuizQs = [
     {
         question: "Which of the following methods is used to access HTML elements using Javascript?",
@@ -23,3 +30,4 @@ const QuizQs = [
         correctAnswer: "//"
     },
 ];
+
