@@ -34,8 +34,29 @@ const QuizQs = [
 let currentQindex = 0;
 let theScoreindex = 0;
 let timeIndex = 60;
+let timerInterval;
+
+//function Begin() {
+//    function StartTimer();
+//    function ShowQuestions();
+//}
+
+function StartTimer(){
+    timerInterval = setInterval(function (){
+        timeIndex--;
+
+        Timer.textContent= "Time left: " + timeIndex;
+
+
+        if (timeIndex <= 0){
+            endQ();
+        }
+    }, 1000);
+}
 
 function ShowQuestions() {
+    
+    if (currentQindex < QuizQs.length){
     const currentQ = QuizQs[currentQindex]
 
     const questionDiv =document.createElement("div");
@@ -47,19 +68,38 @@ function ShowQuestions() {
     for (let i=0; i < currentQ.answers.length; i++){
         const AnswersBTN = document.createElement("button");
         AnswersBTN.textContent = currentQ.answers[i];
+
+        let selectedAnswer=currentQ.answers[i]
         AnswersBTN.addEventListener("click", function (){
-            doAnswerSelect(currentQ.answers[i]);
+            doAnswerSelect(selectedAnswer);
         });
         questionDiv.appendChild(AnswersBTN);
-    }
+    };
+} else {
+    endQ();
+};
 };
 
 function doAnswerSelect(selectedAnswer) {
     const currentQuestion = QuizQs[currentQindex];
 
     if (selectedAnswer === currentQuestion.correctAnswer) {
-        theScoreindex++
+        theScoreindex++;
+        currentQindex++;
+        QContainer.innerHTML="";
+        ShowQuestions();
     } else if (selectedAnswer !== currentQuestion.correctAnswer){
         timeIndex -= 10;
     }
 }
+
+function endQ() {
+    clearInterval(timerInterval);
+}
+
+function Test(){
+    ShowQuestions();
+    StartTimer();
+}
+
+Test();
