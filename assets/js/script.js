@@ -43,7 +43,7 @@ startButton.addEventListener("click", startQ);
 function startQ() {
    StartTimer();
    ShowQuestions();
-
+   hideStart.style.display = "none";
 }
 
 function StartTimer(){
