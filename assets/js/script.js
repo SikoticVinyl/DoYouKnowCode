@@ -95,15 +95,14 @@ function doAnswerSelect(selectedAnswer) {
 
     if (selectedAnswer === currentQuestion.correctAnswer) {
         theScoreindex++;
+        currentQindex++;
+        QContainer.innerHTML="";
+        ShowQuestions();
     } else {
         timeIndex -= 10;
     }
 
     qScore.textContent = "Score: " + theScoreindex;
-
-    currentQindex++;
-    QContainer.innerHTML="";
-    ShowQuestions();
 }
 
 function endQ() {
