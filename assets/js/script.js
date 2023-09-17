@@ -1,9 +1,11 @@
 const QContainer = document.querySelector(".QContainer");
 const qScore = document.querySelector(".Score");
 const Timer = document.querySelector(".Timer");
-const homePage = document.querySelector(".Home");
 const quizQuestions = document.querySelector(".QuizQ");
 const leaderboard = document.querySelector(".ScoreBoard");
+const startButton = document.querySelector("#StartBTN");
+const hideStart = document.querySelector("#StartHide");
+const hideEnd = document.querySelector(".endPage");
 
 const QuizQs = [
     {
@@ -33,13 +35,21 @@ const QuizQs = [
 
 let currentQindex = 0;
 let theScoreindex = 0;
+let scoreInterval;
 let timeIndex = 60;
 let timerInterval;
 
-//function Begin() {
-//    function StartTimer();
-//    function ShowQuestions();
-//}
+hideEnd.style.display = "none";
+startButton.addEventListener("click", startQ);
+
+
+function startQ() {
+    theScoreindex = 0;
+    qScore.textContent = "Score: " + theScoreindex;
+    StartTimer();
+    ShowQuestions();
+    hideStart.style.display = "none";
+}
 
 function StartTimer(){
     timerInterval = setInterval(function (){
@@ -88,18 +98,21 @@ function doAnswerSelect(selectedAnswer) {
         currentQindex++;
         QContainer.innerHTML="";
         ShowQuestions();
-    } else if (selectedAnswer !== currentQuestion.correctAnswer){
+    } else {
         timeIndex -= 10;
     }
+
+    qScore.textContent = "Score: " + theScoreindex;
+}
+
+function showLeaders() {
+    
 }
 
 function endQ() {
     clearInterval(timerInterval);
+    hideEnd.style.display = "block";
+    qScore.style.display = "none";
+    Timer.style.display = "none";
+    showLeaders();
 }
-
-function Test(){
-    ShowQuestions();
-    StartTimer();
-}
-
-Test();

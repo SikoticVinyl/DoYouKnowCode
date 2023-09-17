@@ -12,7 +12,32 @@
     <body>
         <section class="Score"></section>
         <section class="Timer"></section>
+        <section id="StartHide">
+            <h1> Do you know Code?</h1>
+            <h2> A JavaScript Quiz!</h2>
+            <p>Hello, and welcome to this little quiz on some basic JavaScript. In this quiz you have 60 seconds to answer 10 questions about JavaScript. For each question you get wrong, ten seconds is removed from your time left and for each question you get right you get a point.
+                <br>
+                <br>
+                At the quiz, be it you finish or not, you will be taken to a leader board to view your score and time completed and be able to enter your info into a leaderboard!
+                Good Luck!
+            </p>
+            <button id="StartBTN">Start Quiz!</button>
+        </section>
         <div class="QContainer"></div>
+        <section class="endPage">
+            <h2>Completed!</h2>
+            <h3>Thank you for taking my JavaScript Quiz!</h3>
+            <p>Please enter your initials and the system will log your score and time in the box.</p>
+            <div class="LeaderBoard">
+                <h3>LeaderBoard</h3>
+                <ul class="lbList"></ul>
+                <form class="lbForm">
+                    <label for="name">Enter your Name:</label>
+                    <input type="text" id="name" required />
+                    <button id="subBTN">Submit</button>
+                </form>
+            </div>
+        </section>
         
         
         <script src="./assets/js/script.js"></script>
