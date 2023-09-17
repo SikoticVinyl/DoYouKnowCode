@@ -46,8 +46,11 @@ function ShowQuestions() {
 
     for (let i=0; i < currentQ.answers.length; i++){
         const AnswersBTN = document.createElement("button");
-        AnswersBTN.textContent = answers;
-        AnswersBTN.addEventListener("click", doAnswerSelect);
+        AnswersBTN.textContent = currentQ.answers[i];
+        AnswersBTN.addEventListener("click", function (){
+            doAnswerSelect(currentQ.answers[i]);
+        });
+        questionDiv.appendChild(AnswersBTN);
     }
 };
 
@@ -60,6 +63,3 @@ function doAnswerSelect(selectedAnswer) {
         timeIndex -= 10;
     }
 }
-
-console.log(ShowQuestions());
-
