@@ -4,7 +4,8 @@ const Timer = document.querySelector(".Timer");
 const quizQuestions = document.querySelector(".QuizQ");
 const leaderboard = document.querySelector(".ScoreBoard");
 const startButton = document.querySelector("#StartBTN");
-const hideStart = document.querySelector("#StartHide")
+const hideStart = document.querySelector("#StartHide");
+const hideEnd = document.querySelector(".endPage");
 
 const QuizQs = [
     {
@@ -38,7 +39,9 @@ let scoreInterval;
 let timeIndex = 60;
 let timerInterval;
 
+hideEnd.style.display = "none";
 startButton.addEventListener("click", startQ);
+
 
 function startQ() {
    StartTimer();
@@ -106,5 +109,5 @@ function doAnswerSelect(selectedAnswer) {
 
 function endQ() {
     clearInterval(timerInterval);
-    
+    hideEnd.style.display = "block";
 }
