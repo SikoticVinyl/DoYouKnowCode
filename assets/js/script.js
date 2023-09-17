@@ -55,6 +55,8 @@ function StartTimer(){
 }
 
 function ShowQuestions() {
+    
+    if (currentQindex < QuizQs.length){
     const currentQ = QuizQs[currentQindex]
 
     const questionDiv =document.createElement("div");
@@ -72,7 +74,10 @@ function ShowQuestions() {
             doAnswerSelect(selectedAnswer);
         });
         questionDiv.appendChild(AnswersBTN);
-    }
+    };
+} else {
+    endQ();
+};
 };
 
 function doAnswerSelect(selectedAnswer) {
@@ -96,3 +101,5 @@ function Test(){
     ShowQuestions();
     StartTimer();
 }
+
+Test();
