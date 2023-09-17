@@ -47,8 +47,10 @@ function ShowQuestions() {
     for (let i=0; i < currentQ.answers.length; i++){
         const AnswersBTN = document.createElement("button");
         AnswersBTN.textContent = currentQ.answers[i];
+
+        let selectedAnswer=currentQ.answers[i]
         AnswersBTN.addEventListener("click", function (){
-            doAnswerSelect(currentQ.answers[i]);
+            doAnswerSelect(selectedAnswer);
         });
         questionDiv.appendChild(AnswersBTN);
     }
@@ -58,8 +60,13 @@ function doAnswerSelect(selectedAnswer) {
     const currentQuestion = QuizQs[currentQindex];
 
     if (selectedAnswer === currentQuestion.correctAnswer) {
-        theScoreindex++
+        theScoreindex++;
+        currentQindex++;
+        QContainer.innerHTML="";
+        ShowQuestions();
     } else if (selectedAnswer !== currentQuestion.correctAnswer){
         timeIndex -= 10;
     }
 }
+
+ShowQuestions();
