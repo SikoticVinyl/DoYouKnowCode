@@ -34,6 +34,24 @@ const QuizQs = [
 let currentQindex = 0;
 let theScoreindex = 0;
 let timeIndex = 60;
+let timerInterval;
+
+function Begin() {
+    function StartTimer();
+    function ShowQuestions();
+}
+
+function StartTimer(){
+    timerInterval = setInterval(function (){
+        timeIndex--;
+
+        Timer.textContent= "Time left: " + timeIndex;
+
+        if (timeIndex <= 0){
+            endQ();
+        }
+    }, 1000);
+}
 
 function ShowQuestions() {
     const currentQ = QuizQs[currentQindex]
@@ -67,6 +85,10 @@ function doAnswerSelect(selectedAnswer) {
     } else if (selectedAnswer !== currentQuestion.correctAnswer){
         timeIndex -= 10;
     }
+}
+
+function endQ(){
+
 }
 
 ShowQuestions();
