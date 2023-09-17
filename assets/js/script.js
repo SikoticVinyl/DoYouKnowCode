@@ -31,22 +31,35 @@ const QuizQs = [
     },
 ];
 
-let currentQ = 0;
-let theScore = 0;
-let time = 60;
+let currentQindex = 0;
+let theScoreindex = 0;
+let timeIndex = 60;
 
-function runQuiz() {
+function ShowQuestions() {
+    const currentQ = QuizQs[currentQindex]
 
-    for(let i = 0; i < QuizQs.length; i++){
-        const questionDiv =document.createElement("div");
-        const questionPara = document.createElement("p");
-        questionPara.textContent = QuizQs[i].question;
-        questionDiv.appendChild(questionPara);
-        QContainer.appendChild(questionDiv);
+    const questionDiv =document.createElement("div");
+    const questionPara = document.createElement("p");
+    questionPara.textContent =currentQ.question;
+    questionDiv.appendChild(questionPara);
+    QContainer.appendChild(questionDiv);
+
+    for (let i=0; i < currentQ.answers.length; i++){
+        const AnswersBTN = document.createElement("button");
+        AnswersBTN.textContent = answers;
+        AnswersBTN.addEventListener("click", doAnswerSelect);
     }
 };
 
-console.log(runQuiz());
+function doAnswerSelect(selectedAnswer) {
+    const currentQuestion = QuizQs[currentQindex];
 
-runQuiz();
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+        theScoreindex++
+    } else if (selectedAnswer !== currentQuestion.correctAnswer){
+        timeIndex -= 10;
+    }
+}
+
+console.log(ShowQuestions());
 
