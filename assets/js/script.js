@@ -127,12 +127,13 @@ function ShowQuestions() {
 
 function doAnswerSelect(selectedAnswer) {
     const currentQuestion = QuizQs[currentQindex];
+    
+    currentQindex++;
+    QContainer.innerHTML="";
+    ShowQuestions();
 
     if (selectedAnswer === currentQuestion.correctAnswer) {
         theScoreindex++;
-        currentQindex++;
-        QContainer.innerHTML="";
-        ShowQuestions();
     } else {
         timeIndex -= 10;
     }
@@ -162,6 +163,8 @@ function submitScore(event) {
         lbEntries.push(entry);
         showLeaders();
         formLB.style.display="none";
+    } else {
+        alert("No score to record. Please try the Quiz again!");
     }
 };
 
@@ -184,5 +187,6 @@ function endQ() {
     hideEnd.style.display = "block";
     qScore.style.display = "none";
     Timer.style.display = "none";
+    QContainer.innerHTML="";
     showLeaders();
 };
