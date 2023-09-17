@@ -114,7 +114,8 @@ const lbEntries = [];
 
 SubBTN.addEventListener("click", submitScore);
 
-function submitScore() {
+function submitScore(event) {
+    event.preventDefault();
     const userName = Names.value;
     if (userName && theScoreindex > 0){
         const entry = {
@@ -136,7 +137,7 @@ function showLeaders() {
         const entry = lbEntries[i];
         const listEntry = document.createElement("li");
 
-        listEntry.textcontent= "#"+(i+1)+" - "+entry.name+": Score - "+entry.score+", Time completed: "+entry.time+"s";
+        listEntry.textContent= "#"+(i+1)+" - "+entry.name+": Score - "+entry.score+", Time completed: "+entry.time+"s";
         listLB.appendChild(listEntry);
     }
 };
