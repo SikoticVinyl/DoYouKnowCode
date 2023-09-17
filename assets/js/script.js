@@ -26,9 +26,45 @@ const QuizQs = [
     },
 
     {
-        question: "How do you write a comment in javascript?",
-        answers: ["<!-- -->", "/* */", "//",],
-        correctAnswer: "//"
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: ["<link>","<script>","<body>"],
+        correctAnswer: "<script>"
+    },
+
+    {
+        question: "How do you write an IF statement in JavaScript?",
+        answers: ["if i=4", "if i === 2 {return}", "if(i=3)"],
+        correctAnswer: "if(i=3)"
+    },
+
+    {
+        question: "Which of the following is a correct FOR loop?",
+        answers: ["for i = i++", "for(i=0; i++)", "for(i=0, i < element.lenght; i++",],
+        correctAnswer: "for(i=0, i < element.lenght; i++"
+    },
+
+    {
+        question: "JavaScript is the same as Java.",
+        answers: ["True", "False"],
+        correctAnswer: "False"
+    },
+
+    {
+        question: "How can a datatype be declared to be a constant type?",
+        answers: ["const", "var", "let",],
+        correctAnswer: "const"
+    },
+
+    {
+        question: "What is the proper way to connect HTML elements to JavaScript?",
+        answers: ["document.innerHTML.getElementById(...)", "window.getElementById(...)", "document.getElementById(...)"],
+        correctAnswer: "document.getElementById(...)"
+    },
+
+    {
+        question: "What does preventDefault(); do?",
+        answers: ["Stops the execution of a function.", "Halts the browser completely.", "Prevents the default behavior of an event."],
+        correctAnswer: "Prevents the default behavior of an event."
     },
 ];
 
@@ -125,6 +161,7 @@ function submitScore(event) {
         };
         lbEntries.push(entry);
         showLeaders();
+        formLB.style.display="none";
     }
 };
 
