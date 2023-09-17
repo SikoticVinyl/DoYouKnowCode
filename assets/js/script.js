@@ -36,10 +36,10 @@ let theScoreindex = 0;
 let timeIndex = 60;
 let timerInterval;
 
-//function Begin() {
-//    function StartTimer();
-//    function ShowQuestions();
-//}
+function StartQ() {
+   StartTimer();
+   ShowQuestions();
+}
 
 function StartTimer(){
     timerInterval = setInterval(function (){
@@ -96,6 +96,10 @@ function doAnswerSelect(selectedAnswer) {
 function endQ() {
     clearInterval(timerInterval);
 }
+
+
+
+
 
 function Test(){
     ShowQuestions();
