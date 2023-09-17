@@ -44,9 +44,11 @@ startButton.addEventListener("click", startQ);
 
 
 function startQ() {
-   StartTimer();
-   ShowQuestions();
-   hideStart.style.display = "none";
+    theScoreindex = 0;
+    qScore.textContent = "Score: " + theScoreindex;
+    StartTimer();
+    ShowQuestions();
+    hideStart.style.display = "none";
 }
 
 function StartTimer(){
@@ -60,12 +62,6 @@ function StartTimer(){
             endQ();
         }
     }, 1000);
-}
-
-function SetScore(){
-    scoreInterval = setInterval(function(){
-        theScoreindex.textContent ="Your current score is " + theScoreindex
-    })
 }
 
 function ShowQuestions() {
