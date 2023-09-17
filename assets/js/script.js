@@ -1,9 +1,10 @@
 const QContainer = document.querySelector(".QContainer");
 const qScore = document.querySelector(".Score");
 const Timer = document.querySelector(".Timer");
-const homePage = document.querySelector(".Home");
 const quizQuestions = document.querySelector(".QuizQ");
 const leaderboard = document.querySelector(".ScoreBoard");
+const startButton = document.querySelector("#StartBTN");
+const hideStart = document.querySelector("#StartHide")
 
 const QuizQs = [
     {
@@ -33,12 +34,16 @@ const QuizQs = [
 
 let currentQindex = 0;
 let theScoreindex = 0;
+let scoreInterval;
 let timeIndex = 60;
 let timerInterval;
 
-function StartQ() {
+startButton.addEventListener("click", startQ);
+
+function startQ() {
    StartTimer();
    ShowQuestions();
+
 }
 
 function StartTimer(){
@@ -52,6 +57,12 @@ function StartTimer(){
             endQ();
         }
     }, 1000);
+}
+
+function SetScore(){
+    scoreInterval = setInterval(function(){
+        theScoreindex.textContent ="Your current score is " + theScoreindex
+    })
 }
 
 function ShowQuestions() {
@@ -96,14 +107,3 @@ function doAnswerSelect(selectedAnswer) {
 function endQ() {
     clearInterval(timerInterval);
 }
-
-
-
-
-
-function Test(){
-    ShowQuestions();
-    StartTimer();
-}
-
-Test();
