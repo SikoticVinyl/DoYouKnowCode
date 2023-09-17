@@ -147,7 +147,7 @@ const formLB = document.querySelector(".lbForm");
 const Names = document.querySelector("#name");
 const SubBTN = document.querySelector("#subBTN");
 
-const lbEntries = [];
+let lbEntries = [];
 
 SubBTN.addEventListener("click", submitScore);
 
@@ -168,6 +168,18 @@ function submitScore(event) {
     }
 };
 
+const localStorageKey = "leaderboardData"
+
+window.addEventListener("load", function(){
+    const savedData = localStorage.getItem("leaderboardData");
+
+    if(savedData){
+        lbEntries = JSON.parse(savedData);
+        showLeaders();
+    }
+});
+
+
 function showLeaders() {
     listLB.innerHTML=""
     lbEntries.sort(function(a,b){
@@ -180,6 +192,7 @@ function showLeaders() {
         listEntry.textContent= "#"+(i+1)+" - "+entry.name+": Score - "+entry.score+", Time completed: "+entry.time+"s";
         listLB.appendChild(listEntry);
     }
+    localStorage.setItem("leaderboardData", JSON.stringify(lbEntries));
 };
 
 function endQ() {
@@ -190,3 +203,5 @@ function endQ() {
     QContainer.innerHTML="";
     showLeaders();
 };
+
+localStorage.clear();
