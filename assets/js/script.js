@@ -115,11 +115,31 @@ const lbEntries = [];
 SubBTN.addEventListener("click", submitScore);
 
 function submitScore() {
+    const userName = Names.value;
+    if (userName && theScoreindex > 0){
+        const entry = {
+            name: userName,
+            score: theScoreindex,
+            time: 60 - timeIndex,
+        };
+        lbEntries.push(entry);
+        showLeaders();
+    }
+};
 
-}
 function showLeaders() {
+    listLB.innerHTML=""
+    lbEntries.sort(function(a,b){
+        return b.score - a.score;
+    });
+    for(let i=0; i<lbEntries.length; i++){
+        const entry = lbEntries[i];
+        const listEntry = document.createElement("li");
 
-}
+        listEntry.textcontent= "#"+(i+1)+" - "+entry.name+": Score - "+entry.score+", Time completed: "+entry.time+"s";
+        listLB.appendChild(listEntry);
+    }
+};
 
 function endQ() {
     clearInterval(timerInterval);
@@ -127,4 +147,4 @@ function endQ() {
     qScore.style.display = "none";
     Timer.style.display = "none";
     showLeaders();
-}
+};
