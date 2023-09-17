@@ -36,16 +36,17 @@ let theScoreindex = 0;
 let timeIndex = 60;
 let timerInterval;
 
-function Begin() {
-    function StartTimer();
-    function ShowQuestions();
-}
+//function Begin() {
+//    function StartTimer();
+//    function ShowQuestions();
+//}
 
 function StartTimer(){
     timerInterval = setInterval(function (){
         timeIndex--;
 
         Timer.textContent= "Time left: " + timeIndex;
+
 
         if (timeIndex <= 0){
             endQ();
@@ -87,8 +88,11 @@ function doAnswerSelect(selectedAnswer) {
     }
 }
 
-function endQ(){
-
+function endQ() {
+    clearInterval(timerInterval);
 }
 
-ShowQuestions();
+function Test(){
+    ShowQuestions();
+    StartTimer();
+}
