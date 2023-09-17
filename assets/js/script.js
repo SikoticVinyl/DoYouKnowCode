@@ -105,9 +105,14 @@ function doAnswerSelect(selectedAnswer) {
     qScore.textContent = "Score: " + theScoreindex;
 }
 
+function showLeaders() {
+    
+}
+
 function endQ() {
     clearInterval(timerInterval);
     hideEnd.style.display = "block";
-    qScore.textContent = "";
-    Timer.textContent = "";
+    qScore.style.display = "none";
+    Timer.style.display = "none";
+    showLeaders();
 }
