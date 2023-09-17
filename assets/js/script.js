@@ -106,4 +106,5 @@ function doAnswerSelect(selectedAnswer) {
 
 function endQ() {
     clearInterval(timerInterval);
+    
 }
