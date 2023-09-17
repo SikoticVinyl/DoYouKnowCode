@@ -2,7 +2,6 @@ const QContainer = document.querySelector(".QContainer");
 const qScore = document.querySelector(".Score");
 const Timer = document.querySelector(".Timer");
 const quizQuestions = document.querySelector(".QuizQ");
-const leaderboard = document.querySelector(".ScoreBoard");
 const startButton = document.querySelector("#StartBTN");
 const hideStart = document.querySelector("#StartHide");
 const hideEnd = document.querySelector(".endPage");
@@ -105,8 +104,21 @@ function doAnswerSelect(selectedAnswer) {
     qScore.textContent = "Score: " + theScoreindex;
 }
 
+const LB = document.querySelector(".LeaderBoar");
+const listLB = document.querySelector(".lbList")
+const formLB = document.querySelector(".lbForm");
+const Names = document.querySelector("#name");
+const SubBTN = document.querySelector("#subBTN");
+
+const lbEntries = [];
+
+SubBTN.addEventListener("click", submitScore);
+
+function submitScore() {
+
+}
 function showLeaders() {
-    
+
 }
 
 function endQ() {
