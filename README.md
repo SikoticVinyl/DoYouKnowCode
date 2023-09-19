@@ -1,87 +1,38 @@
-# DoYouKnowCode
-A code quiz on JavaScript fundamentals!
+# Do You Know Code?
+A simple JavaScript Quiz!
+## Description
 
-## Homework Info
-This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+Hello and welcome to a little JavaScript quiz that I have created to practice using JavaScript and Bootstrap!
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+DO YOU know Code?
 
-## User Story
+This project created a wonderful opertunity to dip my toes into using local storage as well as continue to build a good foundation of JavaScript knowledge and use. This one took a lot of research to understand what I was needing to accomplish and how to go about doing it. I learned a lot about building out and creating a full working JS file and application that has multiple moving parts and interaction points. Learning how to use the button functions was a breeze, but getting the questions to show on the screen without having them already in the HTML took a good chunk of my attention.
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+This project was built out in two waves, as I started with the quiz questions and score functionallities before finishing and taking on the leaderboard as its own beast. After having written it, it feels like there are two major features at play here and it was useful to know how to intigrate everything together.
 
-## Acceptance Criteria
+## Usage
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+To access my quiz please visit:
 
-## Grading Requirements
+Once you are there, you should see this main page welcoming you with a start button at the bottom. Once you click the start button be ready as the timer begins! Answer each question, but be aware for every wrong answer you loose 10 seconds on the clock and miss an oppertunity to score. Once your timer runs out to zero, you will be taken to the completed page. Here you have access to the leaderboard, where you enter your name in the space provided and it will show you your score, time completed as well as your rank. You can take the quiz multiple times to try and beat your scores!
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![Welcome Screen](/assets/images/StartPage.png)
 
-This Challenge is graded based on the following criteria: 
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the preceding acceptance criteria.
 
-### Deployment: 32%
 
-* Application deployed at live URL.
+![Questions Screen](/assets/images/Questions.png)
 
-* Application loads with no errors.
 
-* Application GitHub URL submitted.
 
-* GitHub repository contains application code.
 
-### Application Quality: 15%
 
-* Application user experience is intuitive and easy to navigate.
+![Completed Screen](/assets/images/EndPage.png)
 
-* Application user interface style is clean and polished.
+## Credits
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+Questions and answers pulled from the following sources, as well as a few made up by me.
 
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+-  https://www.interviewbit.com/javascript-mcq/#which-of-the-following-methods-can-be-used-to-display-data-in-some-form-using-javascript
+- https://www.w3docs.com/quiz/javascript-basic
