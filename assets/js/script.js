@@ -5,6 +5,7 @@ const quizQuestions = document.querySelector(".QuizQ");
 const startButton = document.querySelector("#StartBTN");
 const hideStart = document.querySelector("#StartHide");
 const hideEnd = document.querySelector(".endPage");
+const qhide = document.querySelector(".qhide");
 
 const QuizQs = [
     {
@@ -39,7 +40,7 @@ const QuizQs = [
 
     {
         question: "Which of the following is a correct FOR loop?",
-        answers: ["for i = i++", "for(i=0; i++)", "for(i=0, i < element.lenght; i++",],
+        answers: ["for i = i++", "for(i=0; i++)", "for(i=0, i < element.lenght; i++)",],
         correctAnswer: "for(i=0, i < element.lenght; i++"
     },
 
@@ -74,7 +75,8 @@ let scoreInterval;
 let timeIndex = 60;
 let timerInterval;
 
-hideEnd.style.display = "block";
+hideEnd.style.display = "none";
+qhide.style.display = "none";
 startButton.addEventListener("click", startQ);
 
 
@@ -84,6 +86,7 @@ function startQ() {
     StartTimer();
     ShowQuestions();
     hideStart.style.display = "none";
+    qhide.style.display = "block";
 }
 
 function StartTimer(){
@@ -118,6 +121,8 @@ function ShowQuestions() {
         AnswersBTN.addEventListener("click", function (){
             doAnswerSelect(selectedAnswer);
         });
+        AnswersBTN.classList.add("btn", "btn-info", "mx-2", "mb-3", "btn-outline-dark" );
+        questionPara.classList.add("mt-2");
         questionDiv.appendChild(AnswersBTN);
     };
 } else {
@@ -201,7 +206,6 @@ function endQ() {
     qScore.style.display = "none";
     Timer.style.display = "none";
     QContainer.innerHTML="";
+    qhide.style.display = "none";
     showLeaders();
 };
-
-localStorage.clear();
