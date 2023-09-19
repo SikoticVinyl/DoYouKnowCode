@@ -74,7 +74,7 @@ let scoreInterval;
 let timeIndex = 60;
 let timerInterval;
 
-hideEnd.style.display = "none";
+hideEnd.style.display = "block";
 startButton.addEventListener("click", startQ);
 
 
