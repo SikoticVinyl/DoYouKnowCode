@@ -1,0 +1,23 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+h1 {
+    background-color: aqua;
+}
+
+h2 {
+    background-color: aquamarine;
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    background-color: rgba(6, 163, 111, 0.719);
+    font-size: larger;
+    font-family: 'Playfair Display', serif;
+}
+
+h4 {
+    font-family: 'Playfair Display', serif;
+}

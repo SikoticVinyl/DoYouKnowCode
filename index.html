@@ -6,38 +6,56 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> Do You Know JavaScript?</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
 
     </head>
     <body>
         <section class="Score"></section>
         <section class="Timer"></section>
-        <section id="StartHide">
-            <h1> Do you know Code?</h1>
-            <h2> A JavaScript Quiz!</h2>
-            <p>Hello, and welcome to this little quiz on some basic JavaScript. In this quiz you have 60 seconds to answer 10 questions about JavaScript. For each question you get wrong, ten seconds is removed from your time left and for each question you get right you get a point.
-                <br>
-                <br>
+        <div class="container mt-5">
+            <section id="StartHide" class="row text-center border border-3 border-dark rounded">
+                <h1 class="pt-4 px-4 pb-1 mb-0 rounded-top"> Do you know Code?</h1>
+                <h2 class="pb-4 rounded-bottom"> A JavaScript Quiz!</h2>
+                <p class="text-start p-3">Hello, and welcome to this little quiz on some basic JavaScript. In this quiz you have 60 seconds to answer 10 questions about JavaScript. For each question you get wrong, ten seconds is removed from your time left and for each question you get right you get a point.
+                    <br>
+                    <br>
                 At the quiz, be it you finish or not, you will be taken to a leader board to view your score and time completed and be able to enter your info into a leaderboard!
                 Good Luck!
-            </p>
-            <button id="StartBTN">Start Quiz!</button>
-        </section>
-        <div class="QContainer"></div>
-        <section class="endPage">
-            <h2>Completed!</h2>
-            <h3>Thank you for taking my JavaScript Quiz!</h3>
-            <p>Please enter your initials and the system will log your score and time in the box.</p>
-            <div class="LeaderBoard">
-                <h3>LeaderBoard</h3>
-                <ul class="lbList"></ul>
-                <form class="lbForm">
-                    <label for="name">Enter your Name:</label>
-                    <input type="text" id="name" required />
-                    <button id="subBTN">Submit</button>
-                </form>
-            </div>
-        </section>
+                </p>
+                <button class="btn btn-info btn-outline-dark" id="StartBTN">Start Quiz!</button>
+            </section>
+        </div>
+        </body>
+        <div class="qhide container text-center border border-3 border-dark rounded">
+            <div class="QContainer"></div>
+        </div>
+        <div class="container mt-5">
+            <section class="endPage row col text-center border border-3 border-dark rounded">
+                <h2 class="pt-4 px-4 pb-4 mb-0 rounded-top">Completed!</h2>
+                <h3>Thank you for taking my JavaScript Quiz!</h3>
+                <br>
+                <br>
+                <br>
+                <p>Please enter your initials and the system will log your score and time in the box.</p>
+                <br>
+                <br>
+                <br>
+                <div class="LeaderBoard container col-md-6 mx-auto p-4 bg-light rounded">
+                    <h4>LeaderBoard</h4>
+                    <ul class="lbList"></ul>
+                    <form class="lbForm">
+                        <label for="name">Enter your Name:</label>
+                        <input type="text" id="name" required />
+                        <button id="subBTN" class="btn btn-info">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
         
         
         <script src="./assets/js/script.js"></script>
