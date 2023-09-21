@@ -12,7 +12,7 @@ This project was built out in two waves, as I started with the quiz questions an
 
 ## Usage
 
-To access my quiz please visit:
+To access my quiz please visit: https://sikoticvinyl.github.io/DoYouKnowCode/
 
 Once you are there, you should see this main page welcoming you with a start button at the bottom. Once you click the start button be ready as the timer begins! Answer each question, but be aware for every wrong answer you loose 10 seconds on the clock and miss an oppertunity to score. Once your timer runs out to zero, you will be taken to the completed page. Here you have access to the leaderboard, where you enter your name in the space provided and it will show you your score, time completed as well as your rank. You can take the quiz multiple times to try and beat your scores!
 
